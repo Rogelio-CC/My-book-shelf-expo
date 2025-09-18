@@ -23,7 +23,8 @@ const Add_UpdateBookList = ({ route, navigation }) => {
             }
             try {
                 console.log('Datos enviados:', { idPerson, idBook, status, pagesRead, rating, review });
-                const response = await axios.post('http://192.168.1.77:3000/addBookToList', {
+                // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                const response = await axios.post('http://192.168.1.79:8080/addBookToList', {
                     idPerson,
                     idBook,
                     readingStatus: parseInt(status),
@@ -103,7 +104,8 @@ const Add_UpdateBookList = ({ route, navigation }) => {
                 // Obtener datos existentes del libro para prellenar los campos
                 const fetchBookDetails = async () => {
                     try {
-                        const response = await axios.get(`http://192.168.1.77:3000/getBookDetails/${idPerson}/${idBook}`);
+                        // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                        const response = await axios.get(`http://192.168.1.79:8080/getBookDetails/${idPerson}/${idBook}`);
                         const bookData = response.data;
                         setStatus(bookData.readingStatus.toString());
                         setPagesRead(bookData.readPages.toString());
@@ -125,7 +127,8 @@ const Add_UpdateBookList = ({ route, navigation }) => {
                 }
         
                 try {
-                    const response = await axios.put(`http://192.168.1.77:3000/updateBookDetails/${idPerson}/${idBook}`, {
+                    // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                    const response = await axios.put(`http://192.168.1.79:8080/updateBookDetails/${idPerson}/${idBook}`, {
                         readingStatus: parseInt(status),
                         readPages: parseInt(pagesRead),
                         score: parseInt(rating),

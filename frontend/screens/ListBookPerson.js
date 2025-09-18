@@ -11,7 +11,8 @@ const ListBookPerson = ({ route, navigation }) => {
     useEffect(() => {
         const fetchBooks = async () => {
             try {
-                const response = await axios.get(`http://192.168.1.77:3000/userBooks/${idPerson}/${username}`);
+                // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                const response = await axios.get(`http://192.168.1.79:8080/userBooks/${idPerson}/${username}`);
                 setBooks(response.data);
                 setLoading(false);
             } catch (error) {
@@ -32,7 +33,8 @@ const ListBookPerson = ({ route, navigation }) => {
 
     const handleDeleteBook = async (idPerson, idBook) => {
         try {
-            const response = await axios.delete(`http://192.168.1.77:3000/deleteBook/${idPerson}/${idBook}`);
+            // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+            const response = await axios.delete(`http://192.168.1.79:8080/deleteBook/${idPerson}/${idBook}`);
             if (response.status === 200) {
                 setBooks(books.filter(book => book.idBook !== idBook));
                 setModalVisible(false)

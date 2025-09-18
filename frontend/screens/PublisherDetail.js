@@ -9,7 +9,8 @@ const PublisherDetail = ({ route, navigation }) => {
     useEffect(() => {
         const fetchPublisherDetail = async () => {
             try {
-                const response = await axios.get(`http://192.168.1.77:3000/publisherDetail/${publisher}`);
+                // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                const response = await axios.get(`http://192.168.1.79:8080/publisherDetail/${publisher}`);
                 if (response.status === 200) {
                     setPublisherDetails(response.data);
                 } else {

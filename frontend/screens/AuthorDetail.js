@@ -9,7 +9,8 @@ const AuthorDetail = ({ route, navigation }) => {
     useEffect(() => {
         const fetchAuthorDetail = async () => {
             try {
-                const response = await axios.get(`http://192.168.1.77:3000/authorDetail/${authorName}`);
+                // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                const response = await axios.get(`http://192.168.1.79:8080/authorDetail/${authorName}`);
                 if (response.status === 200) {
                     setAuthorDetails(response.data);
                 } else {

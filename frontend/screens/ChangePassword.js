@@ -25,7 +25,8 @@ const ChangePassword = ({ route, navigation }) => {
 
         try {
             console.log('Datos enviados:', { idPerson, username, oldPassword, newPassword });
-            const response = await axios.put('http://192.168.1.77:3000/changePassword', {
+            // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+            const response = await axios.put('http://192.168.1.79:8080/changePassword', {
                 idPerson: idPerson,
                 username: username,
                 oldPassword: oldPassword,

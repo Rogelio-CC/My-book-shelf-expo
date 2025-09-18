@@ -23,7 +23,8 @@ const Register = ({ navigation }) => {
 
         try {
             console.log('Datos enviados:', { username, password });
-            const response = await axios.post('http://192.168.1.77:3000/crearCuenta', {
+            // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+            const response = await axios.post('http://192.168.1.79:8080/crearCuenta', {
                 username: username,
                 password: password
             });

@@ -10,7 +10,8 @@ const BookDetail = ({ route, navigation }) => {
     useEffect(() => {
         const fetchBookDetail = async () => {
             try {
-                const response = await axios.get(`http://192.168.1.77:3000/bookDetail/${book.idBook}/${book.title}`);
+                // Se cambió la IP para que funcione en la red local (era 77.3000, ahora es 79.8080)
+                const response = await axios.get(`http://192.168.1.79:8080/bookDetail/${book.idBook}/${book.title}`);
                 if (response.status === 200) {
                     setBookDetails(response.data);
                 } else {
