@@ -305,9 +305,8 @@ app.put('/updateBookDetails/:idPerson/:idBook', (req, res) => {
     });
 });
 
-// TODO para las dos últimas rutas: Visualizar correctamente la cantidad de páginas totales de un libro en el frontend (ejemplo: que aparezcan 200 páginas de un libro en vez de undefined)
-
-const PORT = 3000;
+// Configuración del puerto para el servidor (anteriormente estaba en 3000, pero lo cambié a 8080 por el cambio de URL e IP en el frontend)
+const PORT = 8080;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
