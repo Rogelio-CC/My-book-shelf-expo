@@ -14,9 +14,11 @@ MyBookShelf es una aplicación que permite a los usuarios:
 ---
 
 ## 🏗️ Estructura del Proyecto
+```
 MyBookShelf/
 ├── backend/ # Servidor Express.js
 └── frontend/ # Aplicación React Native con Expo
+```
 
 ---
 
@@ -29,9 +31,11 @@ MyBookShelf/
 - **CORS** (v2.8.5): Habilitación de solicitudes cross-origin.
 
 ### Estructura del Backend
+```
 backend/
 ├── package.json # Dependencias del servidor
 └── server.js # Archivo principal del servidor
+```
 
 ### Configuración de Base de Datos
 - **Base de datos**: `bookgestor`
@@ -66,6 +70,7 @@ backend/
 - **React Native Picker** (v2.7.5): Selector de opciones.
 
 ### Estructura del Frontend
+```
 frontend/
 ├── App.js # Componente raíz con navegación
 ├── app.json # Configuración de Expo
@@ -84,6 +89,7 @@ frontend/
 ├── BookDetail.js # Detalles del libro
 ├── AuthorDetail.js # Detalles del autor
 └── PublisherDetail.js # Detalles de la editorial
+```
 
 ### Navegación de la Aplicación
 La aplicación implementa un **Stack Navigator** con las siguientes pantallas:
@@ -135,7 +141,7 @@ npm run web        # Ejecutar en navegador web
 
 ---
 
-# 📝 Requisitos del Proyecto
+## 📝 Requisitos del Proyecto
 
 - Node.js (v14 o superior).
 - MySQL Server (v5.7 o superior).
@@ -144,7 +150,9 @@ npm run web        # Ejecutar en navegador web
 
 ⚠️ Nota: El proyecto almacena credenciales directamente en el código. Para producción, se recomienda usar variables de entorno.
 
-# 📄 Notas
+---
+
+## 📄 Notas
 
 - La aplicación está diseñada para ser un catálogo de libros personal.
 - Usualmente conecta a localhost - asegurar que el servidor backend esté ejecutándose.
